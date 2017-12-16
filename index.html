@@ -113,12 +113,10 @@
 		var img = new Image();
 		img.src = pic[count];
 		img.onload = function(){
-			count++
+			count++;
 			var progress = Math.floor(count/pic.length*100);
 			$('.progress').text(progress+'%');
-			console.log(progress);
 			if (count == i){
-				console.log('complete')
 			$('.loading').hide();
 			$('.cover').velocity('fadeIn',{complete:function(){
 					var $t = $(this);
@@ -489,7 +487,6 @@ leafs3();
 		$('.opt').each(function(index,item){
 			var $item = $(item);
 			var opt = data[daoju][answerIndex]['options'][map_opt[index]];
-			console.log(opt);
 			$item.find('span').text(opt);
 		});
 		$('.result-options').data('correct',data[daoju][answerIndex]['correct'])
@@ -743,7 +740,6 @@ leafs3();
 			var $t = $(this);
 			var correct = $t.closest('.result-options').data('correct');
 			var daoju = $t.closest('.answer').data('daoju')
-			// console.log(correct)
 			var choose_val = map_opt[$t.index()];
 			if(daoju == "renwu"){
 				if(choose_val == correct){
